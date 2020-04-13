@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        h1, p {
+            margin: 0px;
+        }
+
+    </style>
+    <h1 data-atribute="Привет Мир!">Наведите на меня</h1>
+    <p hidden="true"></p>
+
+<br>
+    <h3>Заголовок с содержимым</h3>
+    <div hidden="true">
+        <a href="">Пункт 1</a>
+        <a href="">Пункт 2</a>
+        <a href="">Пункт 3</a>
+        <a href="">Пункт 4</a>
+        <a href="">Пункт 5</a>
+    </div>
+
+    <script>
+        // задание №1
+
+    let $h1 = document.querySelector('h1');
+    let $p = document.querySelector('p');
+
+    $h1.addEventListener("mouseover", () => {
+        let atribute = $h1.getAttribute('data-atribute');
+        $p.innerText = atribute;
+        $p.hidden = false;
+    })
+    $h1.addEventListener("mouseout", (e) => {
+        $p.hidden = true;
+    })
+
+    // задание №2
+    let $DIV = document.querySelector('div');
+    let $h3 = document.querySelector('h3');
+
+    $h3.addEventListener("click", (e) => {
+
+        if($DIV.hidden == true) {
+            $DIV.hidden = false;
+        } else if ($DIV.hidden == false) {
+            $DIV.hidden = true;
+        }
+        
+    })
+
+
+
+
+    </script>
+</body>
+</html>
